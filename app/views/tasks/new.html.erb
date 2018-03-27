@@ -1,9 +1,3 @@
-<h1>Add new task</h1>
-<%= form_for @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.submit %>
-<% end %>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h2>Add new task</h2>
+<%= render 'form', task: @task %>
+

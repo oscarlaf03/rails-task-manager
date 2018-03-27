@@ -1,0 +1,19 @@
+<%= form_for @task do |f| %>
+  <div class="row">
+    <div class="">
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="">
+      <div class="form-group">
+        <%= f.label :details %>
+        <%= f.text_field :details, class: 'form-control' %>
+      </div>
+    </div>
+</div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

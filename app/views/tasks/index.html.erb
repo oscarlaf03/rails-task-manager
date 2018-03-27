@@ -1,2 +1,13 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>Current Tasks</h1>
+  <ul class="task-list">
+    <% @tasks.each do |item| %>
+      <li class="task-list-item">
+        <%= link_to item.title, task_path(item) %> done:
+        <%= item.completed ? '✗' : '▢' %>
+        <%= link_to "delete this task", task_path(item), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "edit task", edit_path(item), class: "btn btn-default" %>
+    <% end %>
+  </ul>
+  <h2>
+    <%= link_to "Add a new task", tasks_new_path, class: "btn btn-primary" %>
+  </h2>
